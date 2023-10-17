@@ -1,4 +1,5 @@
 //contains the paths for the MVCs
+const SERVER_PORT = 3000;
 const xp = require('express');
 const bp = require('body-parser');
 const mongoose = require('mongoose');
@@ -17,7 +18,7 @@ app.set('viewEngine', 'ejs');
 require('./model/userModel');
 
 //defines connection to the database
-mongoose.connect('mongodb://127.0.0.1:27017/readIT', {useNewUrlParser:true}, {useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://c0859952:Da3EXhjDKoZdpwsh@cluster0.w7sstsj.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser:true}, {useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', console.error.bind('Error connecting to the database.'));
 db.once('open', function(){
@@ -62,4 +63,4 @@ app.get('/contact', function(req, res){
     res.render('contact.ejs')
 })
 
-app.listen(4004);
+app.listen(process.inb.PORT || SERVER_PORT);
