@@ -63,4 +63,4 @@ app.get('/contact', function(req, res){
     res.render('contact.ejs')
 })
 
-app.listen(process.inb.PORT || SERVER_PORT);
+app.listen(process.env.PORT || SERVER_PORT);
